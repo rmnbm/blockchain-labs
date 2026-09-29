@@ -1,0 +1,18 @@
+[submodule "erc4626-101/lib/forge-std"]
+	path = erc4626-101/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "erc4626-101/lib/openzeppelin-contracts"]
+	path = erc4626-101/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "erc20-101/lib/forge-std"]
+	path = erc20-101/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "erc20-101/lib/openzeppelin-contracts"]
+	path = erc20-101/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "erc721-101/lib/forge-std"]
+	path = erc721-101/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "erc721-101/lib/openzeppelin-contracts"]
+	path = erc721-101/lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts

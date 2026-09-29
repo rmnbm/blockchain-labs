@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains my solution for the `erc20-102` workshop.
+This folder contains my solution for the `erc20-102` workshop.
 
 It includes the main exercise contract, the receipt token used for deposits and withdrawals, and the script used to execute the complete solution on Sepolia.
 
@@ -14,7 +14,7 @@ It includes the main exercise contract, the receipt token used for deposits and 
 
 ## Notes
 
-The additional interface files included in this repository are direct dependencies of the submitted solution.
+The additional interface files included in this folder are direct dependencies of the submitted solution.
 
 ## Result
 

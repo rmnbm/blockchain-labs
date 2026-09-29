@@ -1,66 +1,29 @@
-## Foundry
+# ERC4626 101
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Overview
 
-Foundry consists of:
+This folder contains my solution for the `erc4626-101` workshop.
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+It implements a tokenized yield vault following the ERC-4626 standard, and a contract that completes every exercise of the workshop in a single transaction on Sepolia.
 
-## Documentation
+## Main Files
 
-https://book.getfoundry.sh/
+- `src/MyVault.sol`: ERC-4626 vault built on OpenZeppelin, deployed with the name and symbol assigned by the evaluator
+- `src/AllInOneSolution.sol`: deploys the vault and runs all the evaluator checks (deposit, mint, withdraw, redeem, previews, yield, max functions)
+- `script/Deploy.s.sol`: deploys a standalone vault
+- `script/DeployAllInOne.s.sol`: deploys the all-in-one solution
+
+## Notes
+
+`Evaluator.sol`, `ERC4626_101.sol`, `MockUnderlying.sol` and the interface files are copies of the workshop contracts, needed to compile the solution.
 
 ## Usage
 
-### Build
-
-```shell
-$ forge build
+```bash
+git submodule update --init --recursive   # from the repository root
+cd erc4626-101
+forge build
+forge script script/DeployAllInOne.s.sol --rpc-url sepolia --broadcast
 ```
 
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+`--rpc-url sepolia` reads the `SEPOLIA_RPC_URL` environment variable.

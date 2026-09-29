@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repository contains my solution for the `amm-101` workshop.
+This folder contains my solution for the `amm-101` workshop.
 
 It includes the token created for the exercise, the main AMM solution contract and the script used to execute the full workflow on Sepolia.
 
@@ -14,7 +14,7 @@ It includes the token created for the exercise, the main AMM solution contract a
 
 ## Notes
 
-The interface files included in this repository are direct dependencies of the submitted solution contract.
+The interface files included in this folder are direct dependencies of the submitted solution contract.
 
 ## Result
 

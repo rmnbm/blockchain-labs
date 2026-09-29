@@ -1,66 +1,32 @@
-## Foundry
+# ERC721 101
 
-**Foundry is a blazing fast, portable and modular toolkit for Ethereum application development written in Rust.**
+## Overview
 
-Foundry consists of:
+This folder contains my solution for the `erc721-101` workshop.
 
-- **Forge**: Ethereum testing framework (like Truffle, Hardhat and DappTools).
-- **Cast**: Swiss army knife for interacting with EVM smart contracts, sending transactions and getting chain data.
-- **Anvil**: Local Ethereum node, akin to Ganache, Hardhat Network.
-- **Chisel**: Fast, utilitarian, and verbose solidity REPL.
+It implements `MyCryptoZoo`, an ERC-721 collection where registered breeders declare animals as NFTs, sell them and breed them, and a Foundry script that completes every exercise of the workshop on Sepolia.
 
-## Documentation
+## Main Files
 
-https://book.getfoundry.sh/
+- `src/MyCryptoZoo.sol`: ERC-721 Enumerable contract built on OpenZeppelin, with:
+  - paid breeder registration
+  - animals with on-chain characteristics (name, sex, legs, wings)
+  - burning of dead animals
+  - a built-in marketplace (`offerForSale`, `buyAnimal`)
+  - paid reproduction between animals, with parent tracking
+- `script/Solve.s.sol`: deploys the contract and runs exercises 1 to 7 against the two workshop evaluators
+
+## Notes
+
+`IExerciceSolution.sol` is the interface required by the workshop evaluators.
 
 ## Usage
 
-### Build
-
-```shell
-$ forge build
+```bash
+git submodule update --init --recursive   # from the repository root
+cd erc721-101
+forge build
+forge script script/Solve.s.sol --rpc-url <SEPOLIA_RPC_URL> --broadcast
 ```
 
-### Test
-
-```shell
-$ forge test
-```
-
-### Format
-
-```shell
-$ forge fmt
-```
-
-### Gas Snapshots
-
-```shell
-$ forge snapshot
-```
-
-### Anvil
-
-```shell
-$ anvil
-```
-
-### Deploy
-
-```shell
-$ forge script script/Counter.s.sol:CounterScript --rpc-url <your_rpc_url> --private-key <your_private_key>
-```
-
-### Cast
-
-```shell
-$ cast <subcommand>
-```
-
-### Help
-
-```shell
-$ forge --help
-$ anvil --help
-$ cast --help
-```
+The script reads the deployer key from the `PRIVATE_KEY` environment variable.
